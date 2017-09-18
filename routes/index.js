@@ -3,10 +3,16 @@ var router = express.Router();
 
 /* GET home page. */
 
+//mongo.model('people').find();
 
 router.get('/', function(req, res, next) {
-    console.log( mongo.model('people').find());
-  res.render('index', { title: 'Express' });
+    res.send('test');
 });
+// router.get('/test', function(req, res, next) {
+//     mongo.model('peoples').find(function(err,users)
+//     {
+//         res.render(users);
+//     });
+// });
 
 module.exports = router;
