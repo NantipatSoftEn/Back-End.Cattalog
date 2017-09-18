@@ -1,4 +1,4 @@
-var express = require('express');
+var {mongo, express} = require('./configdb');
 var router = express.Router();
 
 /* GET home page. */
