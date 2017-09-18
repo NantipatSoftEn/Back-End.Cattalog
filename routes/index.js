@@ -5,14 +5,14 @@ var router = express.Router();
 
 //mongo.model('people').find();
 
-router.get('/', function(req, res, next) {
-    res.send('test');
-});
-// router.get('/test', function(req, res, next) {
-//     mongo.model('peoples').find(function(err,users)
-//     {
-//         res.render(users);
-//     });
+// router.get('/', function(req, res, next) {
+//     res.send('test');
 // });
+//  router.get('/test', function(req, res, next) {
+//     mongo.model('peoples').find(function(err,users)
+//      {
+//          res.send(users);
+//      });
+//  });
 
 module.exports = router;
