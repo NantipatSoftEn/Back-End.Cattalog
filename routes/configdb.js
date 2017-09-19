@@ -12,4 +12,4 @@ var people = mongo.model('people', peopleSchema);
 
 
 
-module.exports = {mongo, express};
+module.exports = {mongo, express,people};
