@@ -1,15 +1,5 @@
 var {mongo, express,people} = require('./configdb');
 var router = express.Router();
-
-
-
-// var query = people.find({});
-// query.select('');
-// query.exec(function (err, person) {
-//   if (err) return handleError(err);
-//   console.log(`aaa ${person[1].name}`);
-// });
-
 router.get('/test', function(req, res, next) {
 
     var query = people.find({});
