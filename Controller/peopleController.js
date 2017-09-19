@@ -17,7 +17,14 @@ exports.create = function(req, res) {
 };
 
 exports.show = function(req, res) {
-  res.send('show forum ' + req.params.c);
+  // res.send('show forum ' + req.params.c);
+  var query = people.findById(req.params.c);
+  query.select('');
+  query.exec(function (err, person) {
+      if (err)
+          return handleError(err);
+      res.json(person);
+  });
 };
 
 exports.update = function(req, res) {
@@ -25,5 +32,7 @@ exports.update = function(req, res) {
 };
 
 exports.destroy = function(req, res) {
-  res.send('destroy forum ' + req.params.forum);
+  res.send('destroy forum ' + req.params.c);
+
+
 };
