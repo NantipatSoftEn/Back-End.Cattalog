@@ -1,24 +1,12 @@
 var {mongo, express,people} = require('./configdb');
-var router = express.Router();
+//var router = express.Router();
+var express  = require('express')
+var Resource = require('express-resource')
+var app = express();
+
+var peopleController = require('../Controller/peopleController');
+
+app.resource('c', peopleController);
 
 
-router.get('/test', function(req, res, next) {
-
-    var query = people.find({});
-
-    query.select('name');
-
-    query.exec(function (err, person) {
-        if (err)
-            return handleError(err);
-        var x = 2;
-
-        // for (var i = 0, len = person.length; i < len; i++) {
-        //   console.log(`aaa ${person[i].name}`);
-        // }
-        res.json(person);
-    });
-
-});
-
-module.exports = router;
+module.exports = app;
