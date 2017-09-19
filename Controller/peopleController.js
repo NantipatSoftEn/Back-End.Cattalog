@@ -16,20 +16,12 @@ exports.index = function(req, res) {
         });
 };
 
-exports.new = function(req, res) {
-  res.render('insert');
-};
-
 exports.create = function(req, res) {
-  res.render('insert');
+    people.collection.insert(req.body);
 };
 
 exports.show = function(req, res) {
   res.send('show forum ' + req.params.forum);
-};
-
-exports.edit = function(req, res) {
-  res.send('edit forum ' + req.params.forum);
 };
 
 exports.update = function(req, res) {
