@@ -17,11 +17,11 @@ exports.index = function(req, res) {
 };
 
 exports.new = function(req, res) {
-  res.send('new forum');
+  res.render('insert');
 };
 
 exports.create = function(req, res) {
-  res.send('create forum');
+  res.render('insert');
 };
 
 exports.show = function(req, res) {
