@@ -1,17 +1,17 @@
-var {mongo, people} = require('../routes/configdb');
+
+// include connection
+var {mongo, people} = require('../model/people');
 
 exports.index = function(req, res) {
-    console.log('sdsd');
+
     var query = people.find({});
 
-        query.select('name');
+        query.select(''); // in Mysql select * form people
 
         query.exec(function (err, person) {
             if (err)
                 return handleError(err);
-            // for (var i = 0, len = person.length; i < len; i++) {
-            //   console.log(`aaa ${person[i].name}`);
-            // }
+
             res.json(person);
         });
 };

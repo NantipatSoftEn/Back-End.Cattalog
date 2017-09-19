@@ -1,4 +1,4 @@
-var {mongo, express,people} = require('./configdb');
+var {mongo, express,people} = require('../model/people');
 //var router = express.Router();
 var express  = require('express')
 var Resource = require('express-resource')

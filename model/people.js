@@ -9,7 +9,4 @@ var peopleSchema = mongo.Schema({
 
 var people = mongo.model('people', peopleSchema);
 
-
-
-
 module.exports = {mongo, express,people};
