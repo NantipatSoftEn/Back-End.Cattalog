@@ -1,7 +1,16 @@
-
-
+/*
+    GET     /forums              ->  index
+    GET     /forums/new          ->  new
+    POST    /forums              ->  create
+    GET     /forums/:forum       ->  show
+    GET     /forums/:forum/edit  ->  edit
+    PUT     /forums/:forum       ->  update
+    DELETE  /forums/:forum       ->  destroy
+*/
 var {mongo, people} = require('../model/people');
+exports.new = function(req, res){
 
+};
 exports.index = function(req, res) {
 
     var query = people.find({});
@@ -15,7 +24,6 @@ exports.index = function(req, res) {
 };
 
 exports.create = function(req, res) {
-
     people.collection.insert(req.body);
 };
 
