@@ -31,6 +31,7 @@ exports.create = function(req, res) {
 };
 
 exports.show = function(req, res) {
+console.log(req.params.c);
 
   var query = people.findById(req.params.c);
   query.select('');
@@ -38,6 +39,7 @@ exports.show = function(req, res) {
   query.exec(function (err, person) {
       if (err)
           return handleError(err);
+      console.log(person);
       res.json(person);
   });
 };
