@@ -26,8 +26,11 @@ exports.index = function(req, res) {
 };
 
 exports.create = function(req, res) {
+<<<<<<< HEAD
     // console.log(req.body);
 
+=======
+>>>>>>> 2d3b7320fce33b1dba0458ff9922e218001a93e8
     var storage =   multer.diskStorage({
       destination: function (req, file, callback) {
         callback(null, './public/images');
@@ -38,6 +41,10 @@ exports.create = function(req, res) {
     });
 
     var upload = multer({ storage : storage}).single('img');
+<<<<<<< HEAD
+=======
+    console.log(upload);
+>>>>>>> 2d3b7320fce33b1dba0458ff9922e218001a93e8
 
     upload(req,res, function(err) {
         if(err) {
@@ -46,18 +53,24 @@ exports.create = function(req, res) {
         res.end("File is uploaded");
     });
 
+<<<<<<< HEAD
 
     // people.collection.insert(req.body);
+=======
+    console.log(req.body);
+    people.collection.insert(req.body);
+>>>>>>> 2d3b7320fce33b1dba0458ff9922e218001a93e8
 };
 
 exports.show = function(req, res) {
-
+ console.log(req.params.c);
   var query = people.findById(req.params.c);
   query.select('');
 
   query.exec(function (err, person) {
       if (err)
           return handleError(err);
+      console.log(person);
       res.json(person);
   });
 };
