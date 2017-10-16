@@ -3,7 +3,7 @@ var mongo = require('mongoose');
 var peopleSchema = mongo.Schema({
     name: String,
     facebook:String,
-    Rank:Number,
+    rank:Number,
     img:String
 });
 

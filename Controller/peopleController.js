@@ -44,7 +44,16 @@ exports.show = function(req, res) {
 };
 
 exports.update = function(req, res){
-  console.log(req.params.c,req.body);
+  console.log(req.body);
+  console.log("update ="+req.params.c);
+  people.findByIdAndUpdate(req.params.c,
+      { $set: { name:req.body.name
+                facebook:req.body.facebook
+                rank: req.body.rank }},
+      { new: true },function (err, people) {
+          if (err) return handleError(err);
+            res.send(people);
+      });
 };
 
 
