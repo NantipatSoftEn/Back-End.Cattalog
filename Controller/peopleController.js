@@ -26,25 +26,6 @@ exports.index = function(req, res) {
 };
 
 exports.create = function(req, res) {
-    var storage =   multer.diskStorage({
-      destination: function (req, file, callback) {
-        callback(null, './public/images');
-      },
-      filename: function (req, file, callback) {
-        callback(null, file.fieldname + '-' + Date.now());
-      }
-    });
-
-    var upload = multer({ storage : storage}).single('img');
-    console.log(upload);
-
-    upload(req,res, function(err) {
-        if(err) {
-            return res.end("Error uploading file.");
-        }
-        res.end("File is uploaded");
-    });
-
     console.log(req.body);
     people.collection.insert(req.body);
 };
