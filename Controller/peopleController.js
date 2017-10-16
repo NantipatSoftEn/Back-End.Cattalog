@@ -47,8 +47,8 @@ exports.update = function(req, res){
   console.log(req.body);
   console.log("update ="+req.params.c);
   people.findByIdAndUpdate(req.params.c,
-      { $set: { name:req.body.name
-                facebook:req.body.facebook
+      { $set: { name:req.body.name,
+                facebook:req.body.facebook,
                 rank: req.body.rank }},
       { new: true },function (err, people) {
           if (err) return handleError(err);
