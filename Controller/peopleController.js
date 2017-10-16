@@ -1,10 +1,10 @@
 /*
     GET     /forums              ->  index
-    GET     /forums/new          ->  new
-    POST    /forums              ->  create
+    GET     /forums/new          ->  new    -> view
+    POST    /forums              ->  create -> insert
     GET     /forums/:forum       ->  show
-    GET     /forums/:forum/edit  ->  edit
-    PUT     /forums/:forum       ->  update
+    GET     /forums/:forum/edit  ->  edit   -> view
+    PUT     /forums/:forum       ->  update -> update
     DELETE  /forums/:forum       ->  destroy
 */
 var {mongo, people} = require('../model/people');
@@ -42,6 +42,11 @@ exports.show = function(req, res) {
       res.json(person);
   });
 };
+
+exports.update = function(req, res){
+  console.log(req.params.c,req.body);
+};
+
 
 exports.destroy = function(req, res) {
 
