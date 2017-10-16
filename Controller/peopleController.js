@@ -58,7 +58,7 @@ exports.update = function(req, res){
 
 
 exports.destroy = function(req, res) {
-
+  console.log(req.params.c);
   var del = people.findByIdAndRemove(req.params.c);
 
   del.exec(function (err, person) {
