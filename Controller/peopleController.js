@@ -15,7 +15,7 @@ exports.new = function(req, res){
 };
 exports.index = function(req, res) {
 
-    var query = people.find({});
+    var query = people.find({}).sort({_id: 'descending'});
         query.select('');
 
         query.exec(function (err, person) {
